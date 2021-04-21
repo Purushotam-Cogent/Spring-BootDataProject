@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DataController {
 	static HashMap<Integer, Data> hs=new HashMap<>();
 	
-	@RequestMapping("/add/${id}/${name}")
+	@RequestMapping("/add/{id}/{name}")
 	public String addData(Integer id,String name)
 	{
 		
