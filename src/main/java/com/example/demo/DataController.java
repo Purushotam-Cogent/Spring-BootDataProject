@@ -2,20 +2,21 @@ package com.example.demo;
 
 import java.util.HashMap;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DataController {
-	static HashMap<Integer, Data> hs=null;
+	static HashMap<Integer, Data> hs=new HashMap<>();
 	
 	public DataController() {
-		 hs=new HashMap<>();
+		// hs=new HashMap<>();
 	}
 	
 	
 	@RequestMapping("/add/{id}/{name}")
-	public String addData(Integer id,String name)
+	public String addData(@PathVariable Integer id,@PathVariable String name)
 	{
 		System.out.println(hs);
 		hs.put(id, new Data(id, name));
