@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -44,7 +45,7 @@ public class DataController {
 
 
 
-class Data
+class Data implements Serializable
 {
 	private int id;
 	private String name;
