@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,20 @@ public class DataController {
 		System.out.println(hs);
 		hs.put(id, new Data(id, name));
 		return (hs.size()>0)?hs.size()+" Data Uploaded ":" Getting error";
+	}
+	
+	@RequestMapping("/data")
+	public ArrayList<Data> getData()
+	{
+		ArrayList<Data> ad=new ArrayList<>();
+		Collection<Data> coll=hs.values();
+		for(Data d:coll)
+		{
+			ad.add(d);
+		}
+		
+		return ad;
+		
 	}
 	
 
